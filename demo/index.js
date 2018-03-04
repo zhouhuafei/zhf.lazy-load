@@ -1,4 +1,5 @@
 const LazyLoad = require('../dist/index.min');
+
 new LazyLoad({
     element: '.g-lazy-load', // 哪些元素进行懒加载
     srcAttr: 'data-src', // 默认获取哪里的属性值当做src
