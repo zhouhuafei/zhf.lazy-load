@@ -2,7 +2,6 @@ const extend = require('zhf.extend');
 const getDomArray = require('zhf.get-dom-array');
 const offset = require('zhf.offset');
 
-
 // 延迟加载
 function LazyLoad(json) {
     this.opts = extend({
@@ -11,8 +10,8 @@ function LazyLoad(json) {
         moreHeight: 0, // 多加载一部分高度的图片
         interval: 80, // 函数节流时间(延迟时间)
         isInitRender: true, // 是否初始化的时候就进行render
-        currentClass: 'g-lazy-load',
-        activeClass: 'g-lazy-load-active',
+        currentClass: 'g-lazy-load', // 加载完之后就移除这个class 建议和element的class保持一致，可以防止重复获取
+        activeClass: 'g-lazy-load-active', // 加载完之后就增加这个class
     }, json);
     this.clientHeight = document.documentElement.clientHeight;
     this.init();
